@@ -1,0 +1,129 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\ProjectsEntry}[4]{				  % Same as \EducationEntry}
+\newcommand{\ProjectsEntry}[3]{\textbf{#1} \hfill {#2} \\ {#3} \sepspace}
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+        
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+\includegraphics[width=0.41\textwidth]{BetterAvatarFuckYouAnton.jpg}
+\MyName{Efe Yalın Güleç}
+\MySlogan{Student at GISMA University}
+
+
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Birth}{December 16, 2005}
+\PersonalEntry{Address}{Sputendörfer Str. 51}
+\PersonalEntry{Phone}{(+49) 160 7585049}
+\PersonalEntry{Mail}{\url{yalingulec06@gmail.com}}
+\PersonalEntry{Language}{Turkish, English, Germany}
+
+%%% Technical skills
+%%% ------------------------------------------------------------
+\NewPart{Technical skills}{}
+
+\SkillsEntry{Common features}{}
+\begin{itemize}
+\item{Preparation in mathematics (linear algebra, discrete mathematics, mathematical analysis, probability theory and mathematical statistics).}
+\item{Understanding the basic principles of OOP.}
+\item{Knowledge in algorithms and structure data.}
+\end{itemize}
+
+\SkillsEntry{Python}{}
+\begin{itemize}
+\item {Thorough knowledge of the standard library, STL containers, and algorithms.}
+\item {Knowledge of standard scripts.}
+\item {Experience with the language for about six months.}
+\end{itemize}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{Gisma University of Applied Sciences}{2024-2028}{Bacholer's Degree with Foundation year.}
+
+
+%%% Projects
+--------------------------------
+
+\NewPart{Projects}{}
+
+\ProjectsEntry{Cafe Management System}{2026}{A simple cafe management program I built with Python. It lets you manage the menu, customers and orders from the terminal.}
+
+\ProjectsEntry{Social Media Database System Project}{2026}{A database for a social media app. It keeps track of users, posts, comments, and likes. The database shows how tables can be connected and how data can be managed with MySQL.}
+
+\end{document}
