@@ -9,3 +9,7 @@ Repository Structure
     main.tex — LaTeX source file for the CV
 
     index.html — HTML/CSS/JS files for the portfolio website
+
+    ProjectReport.pdf - The report as a pdf
+
+    ProjectReport.tex - The report as a latex script
