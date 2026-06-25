@@ -8,6 +8,4 @@ Repository Structure
 
     main.tex — LaTeX source file for the CV
 
-    (website files) — HTML/CSS/JS files for the portfolio website
-
-    (projects folder) — small technical exercises and examples of my work
+    index.html — HTML/CSS/JS files for the portfolio website
